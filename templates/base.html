@@ -1,0 +1,135 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Responsive Admin Dashboard Template">
+        <meta name="keywords" content="admin,dashboard">
+        <meta name="author" content="stacks">
+        <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Title -->
+        <title>链家成都地区二手房房价分析及可视化</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-4.2.1.css">
+        <link href="https://cdn.bootcss.com/font-awesome/5.5.0-2/css/all.min.css" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="{% static 'css/concept.min.css' %}" rel="stylesheet">
+
+
+    </head>
+    <body>
+
+        <!-- Page Container -->
+        <div class="page-container">
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="secondary-sidebar">
+                    <div class="secondary-sidebar-bar">
+                        <a href="#" class="logo-box">成都房价分析</a>
+                    </div>
+                    <div class="secondary-sidebar-menu">
+                        <ul class="accordion-menu">
+                            <li class="active-page">
+                                <a href="{% url 'rentAnalysis:home' %}">
+                                    <i class="menu-icon icon-home4"></i><span>成都市</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                <!-- <a href="charts.html"> -->
+                                    <i class="menu-icon icon-show_chart"></i><span>区域</span><i class="accordion-icon fas fa-angle-left"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'rentAnalysis:bedroom' %}">锦江</a></li>
+                                    <li><a href="#">青羊</a></li>
+                                    <li><a href="#">武侯</a></li>
+                                    <li><a href="#">高新</a></li>
+                                    <li><a href="#">成华</a></li>
+                                    <li><a href="#">金牛</a></li>
+                                    <li><a href="#">天府新区</a></li>
+                                    <li><a href="#">高新西</a></li>
+                                    <li><a href="#">双流</a></li>
+                                    <li><a href="#">温江</a></li>
+                                    <li><a href="#">郫都</a></li>
+                                    <li><a href="#">龙泉驿</a></li>
+                                    <li><a href="#">新都</a></li>
+                                    <li><a href="#">天府新区南区</a></li>
+                                    <li><a href="#">青白江</a></li>
+                                    <li><a href="#">都江堰</a></li>
+                                    <li><a href="#">彭州</a></li>
+                                    <li><a href="#">简阳</a></li>
+                                    <li><a href="#">新津</a></li>
+                                    <li><a href="#">崇州</a></li>
+                                    <li><a href="#">大邑</a></li>
+                                    <li><a href="#">金堂</a></li>
+                                    <li><a href="#">蒲江</a></li>
+                                    <li><a href="#">邛崃</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-divider"></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="search-form">
+                        <form action="#" method="GET">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control search-input" placeholder="搜索...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" id="close-search" type="button"><i class="icon-close"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <nav class="navbar navbar-default navbar-expand-md">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <div class="logo-sm">
+                                    <a href="javascript:void(0)" id="sidebar-toggle-button"><i class="fas fa-bars"></i></a>
+                                    <a class="logo-box" href="index.html"><span>concept</span></a>
+                                </div>
+                                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <i class="fas fa-angle-down"></i>
+                                </button>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+                            <div class="collapse navbar-collapse justify-content-between" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav mr-auto">
+                                    <li class="collapsed-sidebar-toggle-inv"><a href="javascript:void(0)" id="collapsed-sidebar-toggle-button"><i class="fas fa-bars"></i></a></li>
+                                    <li><a href="javascript:void(0)" id="toggle-fullscreen"><i class="fas fa-expand"></i></a></li>
+                                    <li><a href="javascript:void(0)" id="search-button"><i class="fas fa-search"></i></a></li>
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div><!-- /Page Header -->
+                {% block Inner %}
+                {% endblock %}
+            </div><!-- /Page Content -->
+        </div><!-- /Page Container -->
+
+
+        <!-- Javascripts -->
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.6.12/apexcharts.min.js" integrity="sha256-ZMYJj1zqJWx62qFPjHFqG/lkildNfGhU7dVnQrpdDKY=" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/Chart.js/2.8.0/Chart.min.js"></script>
+        <script src="{% static 'js/charts.js' %}"></script>
+        <script src="{% static 'js/concept.min.js' %}"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+        <script src="https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js"></script>
+    </body>
+</html>
