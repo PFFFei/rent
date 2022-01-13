@@ -13,7 +13,7 @@ lxml==4.5.0
 numpy==1.18.2
 pandas==1.0.3
 parsel==1.5.2
-Pillow==7.1.1
+Pillow==9.0.0
 Protego==0.1.16
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
